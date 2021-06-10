@@ -3,22 +3,28 @@ from random import randint
 from random import sample
 
 def main():
-    password_choice = input("Type 1 if you want uppercase only\n"
-                            "Type 2 if you want both uppercase and lowercase\n"
-                            "Type 3 if you want more symbols\n")
-    length = int(input("Choose the length of your password (number only): "))
-    if password_choice == "1":
-        password = upper_case(length)
-        print(f"\nHere is your password: {password}")
-    elif password_choice == "2":
-        password = upper_and_lowercase(length)
-        print(f"\nHere is your password: {password}")
-    elif password_choice == "3":
-        password = more_symbols(length)
-        print(f"\nHere is your password: {password}")
-    else:
-        print("That is not a valid input. ")
 
+    while True:
+        password_choice = input("Type 1 if you want uppercase only\n"
+                                "Type 2 if you want both uppercase and lowercase\n"
+                                "Type 3 if you want more symbols\n")
+        length = int(input("Choose the length of your password (number only): "))
+        if password_choice == "1":
+            password = upper_case(length)
+            print(f"\nHere is your password: {password}")
+        elif password_choice == "2":
+            password = upper_and_lowercase(length)
+            print(f"\nHere is your password: {password}")
+        elif password_choice == "3":
+            password = more_symbols(length)
+            print(f"\nHere is your password: {password}")
+        else:
+            print("That is not a valid input. ")
+
+        user_choice = input("Do you want to try a different password method? Type 'no' to cancel: ")
+        user_choice = user_choice.lower()
+        if user_choice == "no":
+            break
     # password = more_symbols(length)
     # password = upper_case(length)
     # password = upper_and_lowercase(length)
